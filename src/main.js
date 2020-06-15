@@ -3,10 +3,22 @@ var app = new Vue({
   data: {
     title: 'Bin2Dec Calculator',
     binaryInput: "",
-    decimalOutput: ""
+    decimalOutput: "",
+    inputEvent: null
   },
 
   methods: {
+    isBinary(inputEvent) {
+      inputEvent = (inputEvent) ? inputEvent : window.event;
+
+      if (inputEvent.key == 1 || inputEvent.key == 0) {
+        return true;
+      }
+      else {
+        inputEvent.preventDefault();
+      }
+    },
+
     convertToDec() {
       this.decimalOutput = this.binaryInput;      
     },

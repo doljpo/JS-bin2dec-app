@@ -1,6 +1,19 @@
 var app = new Vue({
-    el: '#app',
-    data: {
-      message: 'Bin2Dec Calculator'
+  el: '#app',
+  data: {
+    title: 'Bin2Dec Calculator',
+    binaryInput: "",
+    decimalOutput: ""
+  },
+
+  methods: {
+    convertToDec() {
+      this.decimalOutput = this.binaryInput;      
+    },
+
+    reset() {
+      this.binaryInput = "";
+      this.decimalOutput = "";
     }
-  })
+  }
+})

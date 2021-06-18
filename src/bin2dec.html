@@ -4,22 +4,30 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./bin2dec.css">
+
 	<title>Bin2Dec Converter</title>
 </head>
 <body>
 	<div>
 		<h1>Binary to Decimal Converter</h1>
+		<div id="calc">
+			<div>
+				<label>Binary</label>
+				<input id="binary" type="text" maxlength="8">
+			</div>
+			<div>
+				<label>Decimal: </label>
+				<span id="result"></span>
+			</div>			
+		</div>
 		<div>
-			<label>Binary</label>
-			<input id="binary" type="text" maxlength="8">
 			<span id="warning"></span>
-		</div>
-		<div>
 			<h3>Result</h3>
-			<label>Decimal: </label>
-			<span id="result"></span>
 		</div>
-		<button onclick="reset()">Reset</button>
+		<button class="bt" onclick="reset()">Reset</button>	
 	</div>
 	<script src="./bin2dec.js"></script>
 </body>

@@ -1,0 +1,17 @@
+* {
+    font-family: 'Nunito';
+}
+
+body {
+    padding: 0 10em;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#calc {
+    display: flex;
+    justify-content: space-evenly;
+}

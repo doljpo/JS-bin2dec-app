@@ -27,6 +27,7 @@ BINARY_INPUT.addEventListener('keydown', e => {
 	}
 });
 
+//TODO: melhorar validação de char usando regex
 function isValidKey(character) {
 	return VALID_KEYS.includes(character);
 }

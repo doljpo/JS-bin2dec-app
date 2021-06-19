@@ -11,7 +11,20 @@ h1 {
     text-transform: uppercase;
 }
 
+div {
+    padding-top: 3rem;
+}
+
+.h-center, h1, input {
+    text-align: center;
+}
+
 #calc {
     display: flex;
     justify-content: space-evenly;
+}
+
+#decimal {
+    border-width: 0 0 1px 0;
+    outline: none;
 }

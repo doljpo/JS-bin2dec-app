@@ -1,5 +1,5 @@
 const BINARY_INPUT = document.getElementById('binary');
-const RESULT = document.getElementById('result');
+const RESULT = document.getElementById('decimal');
 const BINARY_MAX_LENGTH = 8;
 const VALID_KEYS = [
 	'0',
@@ -73,11 +73,11 @@ function convert(binary) {
 		pow--;
 	}
 
-	RESULT.innerText = decimal;
+	RESULT.value = decimal;
 }
 
 function reset() {
 	BINARY_INPUT.value = '';
-	RESULT.innerText = '';
+	RESULT.value = '';
 	hideWarning();
 }

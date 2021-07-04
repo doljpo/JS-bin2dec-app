@@ -15,6 +15,10 @@ div {
     padding-top: 3rem;
 }
 
+button {
+    cursor: pointer;
+}
+
 .h-center, h1, input {
     text-align: center;
 }

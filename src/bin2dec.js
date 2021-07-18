@@ -1,7 +1,6 @@
 const BINARY_INPUT = document.getElementById('binary');
 const RESULT = document.getElementById('decimal');
 const BINARY_MAX_LENGTH = 8;
-
 const VALID_KEYS = [
 	'0',
 	'1',
@@ -17,43 +16,44 @@ const VALID_KEYS = [
 
 BINARY_INPUT.addEventListener('keydown', e => {
 	hideWarning();
-	let input = e.key;
+	let pressedKey = e.key;
 		
-	if (maxLengthNotReached(input) && isValidInput(input)) {
-		computeInput(input);
-	}
-	else {
-		showWarning(input);
+	if (maxLengthNotReached(pressedKey) && isValidInput(pressedKey)) {
+		computeInput(pressedKey);
+	} else {
+		showWarning(pressedKey);
 		e.preventDefault();
 	}
 });
 
 function computeInput(input) {
-	let binary = BINARY_INPUT.value + input;
-	convert(binary);
+	if (isBinary(input)) {
+		let binary = BINARY_INPUT.value + input;
+		convert(binary);
+	}
 }
 
-function isValidInput(input) {	
+function isValidInput(input) {
 	return VALID_KEYS.includes(input);
 }
 
-function maxLengthNotReached(character) {
-	if (isBinary(character)) {
+function maxLengthNotReached(pressedKey) {
+	if (isBinary(pressedKey)) {
 		return (BINARY_INPUT.value.length + 1) <= BINARY_MAX_LENGTH;
 	}
 
 	return true;
 }
 
-function isBinary(character) {
-	return character.match(/^[0-1]+$/g);
+function isBinary(pressedKey) {
+	return pressedKey.match(/^[0-1]+$/g);
 }
 
-function showWarning(character) {	
-	if (isBinary(character)) {
-		document.getElementById('warning').innerText = "Converter max length of binary reached (" + BINARY_MAX_LENGTH + " digits)";
-	} else {
-		document.getElementById('warning').innerText = "Invalid character '" + character + "' (binary accepts only 1 and 0)";	
+function showWarning(pressedKey) {	
+	if (isBinary(pressedKey)) {
+		document.getElementById('warning').innerText = "Max length reached (" + BINARY_MAX_LENGTH + " digits)";
+	} else if (!isValidInput(pressedKey)) {
+		document.getElementById('warning').innerText = "Invalid character '" + pressedKey + "' (binary accepts only 1 and 0)";	
 	}
 }
 
@@ -61,12 +61,12 @@ function hideWarning() {
 	document.getElementById('warning').innerText = '';	
 }
 
-function convert(binary) {	
+function convert(pressedKey) {	
 	let decimalValue = 0;
-	let pow = binary.length - 1;
+	let pow = pressedKey.length - 1;
 
-	for (let index = 0; index < binary.length; index++) {
-		const digit = binary[index];		
+	for (let index = 0; index < pressedKey.length; index++) {
+		const digit = pressedKey[index];		
 		decimalValue += (digit * Math.pow(2, pow));
 		pow--;
 	}

@@ -6,8 +6,11 @@ body {
     padding: 0 10em;
 }
 
-h1 {
+h1, h3 {
     text-align: center;
+}
+
+h1 {
     text-transform: uppercase;
 }
 
@@ -24,6 +27,7 @@ button {
 }
 
 #calc {
+    padding-top: 1rem;
     display: flex;
     justify-content: space-evenly;
 }

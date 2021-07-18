@@ -1,17 +1,18 @@
 const BINARY_INPUT = document.getElementById('binary');
 const RESULT = document.getElementById('decimal');
 const BINARY_MAX_LENGTH = 8;
+
 const VALID_KEYS = [
 	'0',
 	'1',
+	'Enter',
 	'Backspace',
 	'Delete',
-	'Enter',
+	'Tab',
+	'F5',
+	'Alt',
 	'ArrowLeft',
-	'ArrowUp',
-	'ArrowRight',
-	'ArrowDown',
-	'F5'
+	'ArrowRight'
 ]
 
 BINARY_INPUT.addEventListener('keydown', e => {

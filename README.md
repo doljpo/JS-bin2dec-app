@@ -1,5 +1,5 @@
 # Bin2Dec
-Originally from https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Bin2Dec-App.md
+One of many app ideas that can be found here: https://github.com/florinpop17/app-ideas
 
 JS-bin2dec-app is a simple application that allows the user to enter strings of up to 8 binary digits, 0's
 and 1's, in any sequence and then displays its decimal equivalent.
